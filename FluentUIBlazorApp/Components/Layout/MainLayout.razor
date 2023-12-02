@@ -1,0 +1,42 @@
+﻿@inherits LayoutComponentBase
+
+<FluentLayout Style="background-color: var(--neutral-layer-1);
+                    color: var(--neutral-foreground-rest);">
+    @* Header *@
+    <FluentHeader>
+        .NET Conf 2023
+    </FluentHeader>
+
+    <FluentBodyContent>
+        <FluentStack Orientation="Orientation.Horizontal" Style="height: 100%;">
+
+            @* Left Menu *@
+            <FluentNavMenu Width="250" Title="Navigation menu">
+                <FluentNavLink Icon="@(new Icons.Regular.Size20.Home())"
+                               Href="/" Match="NavLinkMatch.All">Home</FluentNavLink>
+                <FluentNavLink Icon="@(new Icons.Regular.Size20.AddSquare())"
+                               Href="/Counter">Counter</FluentNavLink>
+                <FluentNavLink Icon="@(new Icons.Regular.Size20.WeatherRainShowersDay())"
+                               Href="/Weather">Weather</FluentNavLink>
+                <FluentNavLink Icon="@(new Icons.Regular.Size20.PlugConnectedSettings())"
+                               Href="/Register">Register</FluentNavLink>
+            </FluentNavMenu>
+
+            @* Content *@
+            <div class="main-content">
+                @Body
+            </div>
+
+        </FluentStack>
+
+    </FluentBodyContent>
+
+    @* Footer *@
+    <FluentFooter>
+        Microsoft 2023
+    </FluentFooter>
+
+</FluentLayout>
+
+<FluentDialogProvider />
+<FluentToastProvider />
